@@ -37,7 +37,7 @@ function sendEmails() {
 
     Logger.log(emailAddress)
     Logger.log(htmlbody)
-    GmailApp.sendEmail(emailAddress, subject, htmlbody,{attachments: [file.getAs(MimeType.PDF)],name: 'Andrew Chan - Resume'},);
+    GmailApp.sendEmail(emailAddress, subject, htmlbody,{attachments: [file.getAs(MimeType.PDF)],name: 'Andrew Chan - Doc},);
   
   }
 }
