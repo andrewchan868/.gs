@@ -4,9 +4,9 @@
 function sendEmails() {
   var sheet = SpreadsheetApp.getActiveSheet();
   var startRow = 1 // First row of data to process
-  var numRows = 100; // Number of rows to process
+  var numRows = 114; // Number of rows to process //113
   // Fetch the range of cells b2:k2
-  var dataRange = sheet.getRange(startRow, 1, numRows, 12);
+  var dataRange = sheet.getRange(startRow, 1, numRows, 14);
   // Fetch values for each row in the Range.
   //var data = dataRange.getDisplayValues();
   var data = dataRange.getValue();
@@ -22,7 +22,8 @@ function sendEmails() {
   //MailApp.sendEmail(test, test2, test3);
   
 
-  for (var row = 2; row <= 8; row = row + 1){
+//for 113
+  for (var row = 2; row <= 114; row = row + 1){ 
 
     var body = SpreadsheetApp.getActiveSheet().getRange(row,13).getValue();
     var sub = SpreadsheetApp.getActiveSheet().getRange(row,4).getValue();
@@ -30,9 +31,13 @@ function sendEmails() {
     var emailAddress = to; // Second column
     var htmlbody = body;
     var subject = sub;
+
+    var file = DriveApp.getFileById('1sgNdeflbX-ddOm0iFwkowJBcemBTmjaJ');
+    var file2 = DriveApp.getFileById('1hjZ5i1kf61-eulobuBDAMvuOyzQURrNy');
+
     Logger.log(emailAddress)
     Logger.log(htmlbody)
-    GmailApp.sendEmail(emailAddress, subject, htmlbody);
+    GmailApp.sendEmail(emailAddress, subject, htmlbody,{attachments: [file.getAs(MimeType.PDF)],name: 'Andrew Chan - Resume'},);
   
   }
 }
