@@ -32,8 +32,8 @@ function sendEmails() {
     var htmlbody = body;
     var subject = sub;
 
-    var file = DriveApp.getFileById('1sgNdeflbX-ddOm0iFwkowJBcemBTmjaJ');
-    var file2 = DriveApp.getFileById('1hjZ5i1kf61-eulobuBDAMvuOyzQURrNy');
+    var file = DriveApp.getFileById('<hide>');
+    var file2 = DriveApp.getFileById('<hide>');
 
     Logger.log(emailAddress)
     Logger.log(htmlbody)
